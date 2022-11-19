@@ -25,6 +25,7 @@ Go to the `sg_generator.py` file and update your file name [here](https://github
 python -m venv <venv_name>
 source <venv_name>/bin/activate
 pip install -r requirements.txt 
+python sg_generator.py
 ```
 #### Environment Variables
 
