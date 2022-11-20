@@ -6,7 +6,11 @@ Discovers the social graph of people in a college from their github activity.
 
 ## ⚒️ How it Works
 
+![Workflow](.github/images/workflow.png)
+
 At present it takes the data, containing all the GitHub user's account URL, processess it and then generates a social graph for all their repo as well as repositories where they have shared contributions to.
+
+After the preprocessing step, the program parallely looks for all the repos of all the users, gets them and stores them in a common dictionary, where key are the the repositories and values are list of contributors.
 
 ## 💻 Installation
 
