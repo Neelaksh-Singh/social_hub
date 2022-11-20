@@ -103,9 +103,10 @@ class Social_Graph:
                     self.active_users[user] += 1
         
         # print(list(self.active_users.items()))
-        keyMax = max(self.active_users, key= lambda x: self.active_users[x])
+        most_active_user = max(self.active_users, key= lambda x: self.active_users[x])
+        user_activity= sorted(self.active_users.items(),key=lambda x:x[1], reverse=True)
         # print(keyMax)
-        return keyMax
+        return most_active_user, user_activity
                                      
         # g = nx.Graph(data)
         # print(g)
@@ -115,5 +116,14 @@ class Social_Graph:
         # plt.savefig("filename.png")
 
 sg = Social_Graph()
-active_user= sg.activeNodes()
-print(active_user,sg.active_users[active_user])
+most_active_user, user_activity = sg.activeNodes()
+print("Most active user")
+print(most_active_user,sg.active_users[most_active_user])
+print("========================")
+print("Top 10 User contribution stats")
+i=0
+for k,v in user_activity:
+    if i==10:
+        break
+    print(k, v)
+    i += 1
